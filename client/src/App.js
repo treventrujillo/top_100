@@ -6,7 +6,8 @@ class App extends Component {
   state = { songs: [] }
 
   componentDidMount() {
-    //TODO make call to server to get songs
+    axios.get(`/api/items`)
+      .then( res => this.setState({ songs: res.data }))
   }
 
   addSong = (name) => {
