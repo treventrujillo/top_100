@@ -10,11 +10,11 @@ const Song = ({ id, name, updateSong, deleteSong }) => (
     <div className="col m2">
       <button>This doesnt do anything yet.</button>
     </div>
-    <div className="col m2" style=styles onClick={ () => deletSong(id)}>
+    <div className="col m2"  onClick={ () => deleteSong(id)}>
       X
     </div>
   </div>
 
 )
 
-export default Song
+export default Song;

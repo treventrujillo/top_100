@@ -1,5 +1,5 @@
 import React from 'react';
-import Song from 'Song';
+import Song from './Song';
 
 const Billboard = ({ songs, updateSong, deleteSong }) => (
   <div className="row">
@@ -13,4 +13,4 @@ const Billboard = ({ songs, updateSong, deleteSong }) => (
   )}
   </div>
 )
-export default Billboard
+export default Billboard;
