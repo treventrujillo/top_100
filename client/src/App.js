@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import SongForm from './components/SongForm';
+import Billboard from './components/Billboard';
 
 class App extends Component {
+  state = { songs: [] }
+
+  componentDidMount() {
+    //TODO make call to server to get songs
+  }
+
+  addSong = (name) => {
+    
+  }
+
+  updateSong = (id) => {
+
+  }
+
+  deleteSong = (id) => {
+
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="container">
+        <SongForm addSong={this.addSong} />
+        <Billboard
+          songs={this.state.songs}
+          updateSong={this.updateSong}
+          deleteSong={this.deleteSong}
+        />
       </div>
     );
   }
