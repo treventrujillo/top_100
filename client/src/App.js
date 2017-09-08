@@ -10,15 +10,39 @@ class App extends Component {
   }
 
   addSong = (name) => {
-    
+    let song = { name };
+    fetch('/api/songs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(song)
+    }).then( res => res.json() )
+      .then( song => {
+        const { songs } = this.state;
+        this.setState({ songs: [...songs, song] });
+    })
   }
 
   updateSong = (id) => {
+    axios.put(`/api/songs/${id}`, { method: 'PUT' })
+      .then( res => res.json() )
+        const songs = this.state.songs.map( t => {
+          if (t.id === id)
+            return song
+          return t
+        });
 
+        this.setState({ songs });
   }
 
   deleteSong = (id) => {
-
+    fetch(`/api/items/${id}`, { method: 'DELETE' })
+      .then ( () => {
+        const { songs } = this.state;
+        this.setState({ songs: songs.filter( t => t.id !== id ) })
+      })
   }
 
   render() {
