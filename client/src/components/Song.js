@@ -8,8 +8,12 @@ const Song = ({ id, name, updateSong, deleteSong }) => (
       </div>
     </div>
     <div className="col m2">
-      <input
-        id={``}
+      <button>This doesnt do anything yet.</button>
+    </div>
+    <div className="col m2" style=styles onClick={ () => deletSong(id)}>
+      X
+    </div>
+  </div>
 
 )
 
